@@ -1,0 +1,9 @@
+1.git clone https://github.com/flutter/flutter.git
+2. /workspaces/flutter/bin
+3. nano ~/.bashrc # or ~/.profile
+4. export PATH="$PATH:[PATH_TO_FLUTTER_DIRECTORY]/bin"
+5. nano ~/.zshrc
+6. export PATH="$PATH:[PATH_TO_FLUTTER_DIRECTORY]/bin"
+7. source ~/.bashrc # or source ~/.profile or source ~/.zshrc
+8. flutter doctor
+9. flutter run -d web-server --web-hostname=0.0.0.0 --web-port 3000

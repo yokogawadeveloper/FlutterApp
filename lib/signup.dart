@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
 class SignupPage extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
 
   @override
@@ -16,14 +17,13 @@ class SignupPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 44),
-              // Profile Avatar (placeholder)
               Center(
                 child: CircleAvatar(
                   radius: 56,
                   backgroundColor: Colors.grey[300],
                   backgroundImage: AssetImage(
                     '/profile/user-icon.png',
-                  ), // Or your app logo
+                  ),
                 ),
               ),
               SizedBox(height: 32),
@@ -45,10 +45,12 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 32),
+
+              // First Name
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Full Name',
+                  'First Name',
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 16,
@@ -58,9 +60,9 @@ class SignupPage extends StatelessWidget {
               ),
               SizedBox(height: 8),
               TextField(
-                controller: nameController,
+                controller: firstNameController,
                 decoration: InputDecoration(
-                  hintText: 'Enter your full name',
+                  hintText: 'Enter your first name',
                   hintStyle: TextStyle(color: Colors.grey[400], fontSize: 16),
                   filled: true,
                   fillColor: Colors.white,
@@ -83,6 +85,48 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+
+              // Last Name
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Last Name',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              SizedBox(height: 8),
+              TextField(
+                controller: lastNameController,
+                decoration: InputDecoration(
+                  hintText: 'Enter your last name',
+                  hintStyle: TextStyle(color: Colors.grey[400], fontSize: 16),
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 18,
+                    vertical: 16,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(color: Colors.grey[300]!),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(color: Colors.grey[300]!),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide(color: Color(0xFFE67E22)),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              // Mobile Number
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -128,6 +172,8 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
+
+              // Sign Up Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -153,6 +199,8 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 22),
+
+              // OR Divider
               Row(
                 children: [
                   Expanded(
@@ -171,6 +219,8 @@ class SignupPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 22),
+
+              // Google Sign Up Button
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
